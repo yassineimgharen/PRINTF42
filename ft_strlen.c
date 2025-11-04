@@ -6,18 +6,18 @@
 /*   By: yaimghar <yaimghar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 19:56:16 by yaimghar          #+#    #+#             */
-/*   Updated: 2025/10/31 09:28:57 by yaimghar         ###   ########.fr       */
+/*   Updated: 2025/11/03 13:18:27 by yaimghar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
-int ft_strlen(char *str)
+int	ft_strlen(char *str)
 {
-    int len;
-    
-    len = 0;
-    while (str[len])
-        len++;
-    return (len);
+	int	len;
+
+	len = 0;
+	while (str[len])
+		len++;
+	return (len);
 }

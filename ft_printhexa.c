@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printunsigned.c                                    :+:      :+:    :+:   */
+/*   ft_printhexa.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yaimghar <yaimghar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/31 09:36:36 by yaimghar          #+#    #+#             */
-/*   Updated: 2025/11/03 13:18:13 by yaimghar         ###   ########.fr       */
+/*   Created: 2025/10/31 21:34:27 by yaimghar          #+#    #+#             */
+/*   Updated: 2025/11/03 13:18:32 by yaimghar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	printunsigned(int nbr)
+int	printhexa(unsigned long nb)
 {
-	int				count;
-	unsigned int	usn;
+	int		count;
+	char	*symbols;
 
+	symbols = "0123456789abcdef";
 	count = 0;
-	usn = (unsigned int)nbr;
-	if (usn >= 10)
-		count += printunsigned(usn / 10);
-	count += printchar('0' + (usn % 10));
+	if (nb >= 16)
+		count += printhexa(nb / 16);
+	count += printchar(symbols[nb % 16]);
 	return (count);
 }

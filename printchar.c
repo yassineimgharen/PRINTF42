@@ -6,15 +6,23 @@
 /*   By: yaimghar <yaimghar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 09:38:25 by yaimghar          #+#    #+#             */
-/*   Updated: 2025/10/31 09:38:59 by yaimghar         ###   ########.fr       */
+/*   Updated: 2025/11/03 13:18:08 by yaimghar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
-int printchar(char c)
+int	printchar(char c)
 {
-	int count = 0;
-	count +=  write(1, &c ,1);
-	return count;    
+	int	count;
+
+	count = 0;
+	if (c == 0)
+	{
+		write(1, "\0", 1);
+		count = 1;
+		return (count);
+	}
+	count += write(1, &c, 1);
+	return (count);
 }

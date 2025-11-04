@@ -1,8 +1,8 @@
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 SRCS = ft_strlen.c ft_printhexupp.c printaddress.c printchar.c \
-		printfdigit.c printstr.c printunsigned.c ft_putstr.c
-
+		printfdigit.c printstr.c printunsigned.c printstr.c \
+		ft_printhexa.c ft_printf.c
 OBJS = $(SRCS:.c=.o)
 
 DELETE = rm -f
@@ -17,7 +17,7 @@ $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	$(DELETE) $(OBJS) $(BOBJS)
+	$(DELETE) $(OBJS)
 
 fclean: clean
 	$(DELETE) $(NAME)

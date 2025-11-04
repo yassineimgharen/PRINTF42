@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yaimghar <yaimghar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/31 09:51:40 by yaimghar          #+#    #+#             */
-/*   Updated: 2025/10/31 09:52:31 by yaimghar         ###   ########.fr       */
+/*   Created: 2025/11/02 13:56:06 by yaimghar          #+#    #+#             */
+/*   Updated: 2025/11/03 13:29:25 by yaimghar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
-void	ft_putstr(char *s)
-{
-	if (!s)
-		return ;
-	while (*s != '\0')
-	{
-		write(1, s, 1);
-		s++;
-	}
-}
+# include <unistd.h>
+# include <stdlib.h>
+# include <stdarg.h>
+# include <stdio.h>
+
+int	printstr(char *str);
+int	printfdigit(int nb);
+int	ft_strlen(char *str);
+int	printhexupp(unsigned int nb);
+int	printaddress(void *str);
+int	printchar(char c);
+int	printunsigned(int nbr);
+int	printhexa(unsigned long nb);
+int	ft_printf(const char *format, ...);
+
+#endif
